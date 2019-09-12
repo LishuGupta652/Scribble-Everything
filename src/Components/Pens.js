@@ -12,30 +12,6 @@ export default class Pens extends Component {
 		this.state = {data : []};
 
 	}
-// 	getData = async () => {
-
-// 		try {
-// 			let response = await client.getEntries({
-// 				skip:0,
-// 				content_type:"pens"
-// 		});				
-
-// 		const pen = response.items;
-
-// 		let pens = pen.map((item) => {
-// 			return (
-// 				<div>
-// 					{item.fields.title}
-// 				</div>
-// 			)
-// 		})
-// 		console.log(pen)
-						
-// 		} catch (error) {
-// 			console.log(error);
-			
-// 		}
-// }
 	
 	getData = async () => {
 		let response = await client.getEntries({
@@ -59,7 +35,7 @@ export default class Pens extends Component {
 		
 		let pens = this.state.data;
 		
-		if(pens.length == 0){
+		if(pens.length === 0){
 			return (
 				<div>
 					<div className="loading">
@@ -70,7 +46,7 @@ export default class Pens extends Component {
 			)
 		}
 		let pen = pens.map((item) => {
-				if(pens.length != 0){
+				if(pens.length !== 0){
 
 					return (
 						<div className="single-pen">
@@ -84,7 +60,6 @@ export default class Pens extends Component {
 
 		})
 		
-		console.log(pen)
 		return (
 		<>
 		<div className="all-pens">
