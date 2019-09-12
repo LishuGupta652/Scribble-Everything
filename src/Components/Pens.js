@@ -59,7 +59,7 @@ export default class Pens extends Component {
 		
 		let pens = this.state.data;
 		
-		if(pens.length !== 0){
+		if(pens.length == 0){
 			return (
 				<div>
 					<div className="loading">
