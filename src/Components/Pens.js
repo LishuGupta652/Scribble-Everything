@@ -59,8 +59,7 @@ export default class Pens extends Component {
 		
 		let pens = this.state.data;
 		let pen = pens.map((item) => {
-			console.log(item)
-			if(!pens){
+			if(!this.state.data){
 				return (
 					<h1>Loading Pens Please Wait ...</h1>
 				)

@@ -92,3 +92,12 @@ footer i{
 footer  i:hover {
   color:  #c32aa3;
 }
+
+@media (max-width:600px){
+  footer{
+    font-size: 30px;
+  }
+  footer i{
+    font-size: 50px;
+  }
+}
