@@ -58,16 +58,21 @@ export default class Pens extends Component {
 	render() {
 		
 		let pens = this.state.data;
+		
+		if(pens.length == 0){
+			return (
+				<div>
+					<div className="loading">
+					<div class="loader"></div>
+					</div>
+				</div>
+			)
+		}
 		let pen = pens.map((item) => {
-			if(!this.state.data){
-				return (
-					<h1>Loading Pens Please Wait ...</h1>
-				)
-			}
-			else{
+				if(pens.length != 0){
 
-				return (
-					<div className="single-pen">
+					return (
+						<div className="single-pen">
 						<h3>{item.fields.title}</h3>
 						<div className="image">
 						<img src={item.fields.image.fields.file.url} alt={item.fields.title}/> 
@@ -75,12 +80,14 @@ export default class Pens extends Component {
 					</div>
 				)
 			}
+
 		})
 		
+		console.log(pen)
 		return (
 		<>
 		<div className="all-pens">
-			{pen}
+			{pen }
 		</div>
 		</>
 		);
